@@ -1,14 +1,16 @@
 import React, { useContext } from 'react';
 import { CartContext } from './CartContext';
+import Brief from './Brief';
 
-const CartWidget = () => {
+const Checkout = () => {
     const { cart } = useContext(CartContext);
 
     return (
     <div>
-        🛒 {cart.length}
+        <h1>Checkout</h1>
+        <Brief cart={cart} />
     </div>
     );
 };
 
-export default CartWidget   
+export default Checkout;
