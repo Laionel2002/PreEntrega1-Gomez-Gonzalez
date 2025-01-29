@@ -6,6 +6,7 @@ import ItemDetailContainer from "./components/ItemDetailContainer";
 import { CartProvider } from "./components/CartContext"; // Asegúrate de importar CartProvider
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import ItemList from './ItemList';
 
 function App() {
     return (
