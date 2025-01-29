@@ -3,3 +3,22 @@ body {
     margin: 0;
     padding: 0;
     }
+
+.App {
+    text-align: center;
+    }
+    
+    nav {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    }
+    
+    .cart-widget {
+    position: fixed;
+    right: 10px;
+    top: 60px;
+    background-color: #f4f4f4;
+    padding: 10px;
+    border: 1px solid #ccc;
+    }

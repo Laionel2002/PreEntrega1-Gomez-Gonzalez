@@ -1,16 +1,21 @@
-import React, { useContext } from 'react';
-import { CartContext } from './CartContext';
-import Brief from './Brief';
+import React from 'react';
 
-const Checkout = () => {
-    const { cart } = useContext(CartContext);
+function Checkout({ cart, onRemove }) {
+    const total = cart.reduce((sum, item) => sum + item.price, 0);
 
     return (
     <div>
-        <h1>Checkout</h1>
-        <Brief cart={cart} />
+        <h2>Checkout</h2>
+        {cart.map(item => (
+        <div key={item.id}>
+            <span>{item.name} - {item.price}€</span>
+            <button onClick={() => onRemove(item.id)}>Eliminar</button>
+        </div>
+        ))}
+        <h3>Total: {total}€</h3>
+        <button>Finalizar Compra</button>
     </div>
     );
-};
+}
 
 export default Checkout;

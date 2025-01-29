@@ -1,19 +1,15 @@
-import React, { useState } from 'react';
-import ItemQuantitySelector from './ItemQuantitySelector';
-import Description from './Description';
-import AddItemButton from './AddItemButton';
+import React from 'react';
 
-const ItemDetail = ({ product }) => {
-    const [quantity, setQuantity] = useState(1);
-
+function ItemDetail({ item, onAddToCart, onBack }) {
     return (
     <div>
-        <h2>{product.name}</h2>
-        <Description text={product.description} />
-        <ItemQuantitySelector quantity={quantity} setQuantity={setQuantity} />
-        <AddItemButton product={product} quantity={quantity} />
+        <h2>{item.name}</h2>
+        <p>{item.description}</p>
+        <p>{item.price}€</p>
+        <button onClick={() => onAddToCart(item)}>Añadir al carrito</button>
+        <button onClick={onBack}>Volver</button>
     </div>
     );
-};
+}
 
 export default ItemDetail;

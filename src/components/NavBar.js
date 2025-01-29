@@ -1,15 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-const NavBar = () => {
+function NavBar({ cartCount, onCheckout }) {
     return (
     <nav>
-        <Link to="/">Shop</Link>
-        <Link to="/about">About</Link>
-        <Link to="/our-values">Our values</Link>
-        <Link to="/contact">Contact</Link>
+        <h1>Mi Tienda</h1>
+        <button onClick={onCheckout}>Ver Carrito ({cartCount})</button>
     </nav>
     );
-};
+}
 
 export default NavBar;
