@@ -1,17 +1,25 @@
 import React, { useEffect, useState } from 'react';
-import ItemList from './ItemList';
-import { getProducts } from '../services';
+import Item from './Item';
 
 const ItemListContainer = () => {
-    const [products, setProducts] = useState([]);
+    const [items, setItems] = useState([]);
 
     useEffect(() => {
-    getProducts().then(data => setProducts(data));
+    // Aquí puedes hacer una llamada a una API para obtener los productos
+    const fetchItems = async () => {
+        const response = await fetch('https://api.example.com/items');
+        const data = await response.json();
+        setItems(data);
+    };
+
+    fetchItems();
     }, []);
 
     return (
     <div>
-        <ItemList products={products} />
+        {items.map(item => (
+        <Item key={item.id} item={item} />
+        ))}
     </div>
     );
 };

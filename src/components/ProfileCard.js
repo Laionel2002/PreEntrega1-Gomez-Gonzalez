@@ -3,10 +3,10 @@ import React from 'react';
 const ProfileCard = () => {
     return (
     <div>
-        <h3>Perfil del Usuario</h3>
-        <p>Información del perfil...</p>
+        <h2>Profile</h2>
+        <p>User information goes here...</p>
     </div>
     );
 };
 
-export default ProfileCard  
+export default ProfileCard;
